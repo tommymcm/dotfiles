@@ -1,0 +1,18 @@
+# Prompt
+export PS1='\[\e[0;92m\]\n╭╴\[\e[1;3;37m\]\h\[\e[0;1;37m\]:\[\e[1;33m\]\w\[\e[0;37m\]\[\e[0m\] \n\[\e[0;92m\]╰╼\[\e[0m\] '
+
+# Global variables
+export EDITOR=emacs
+
+# Keybinds
+xmodmap -e 'keycode 65 = space underscore space'
+
+# Makefile rules autocomplete
+complete -W "\`grep -oE '^[a-zA-Z0-9_.-]+:([^=]|$)' ?akefile | sed 's/[^a-zA-Z0-9_.-]*$//'\`" make
+
+# git autocomplete
+if [ -f ~/.git-completion.bash ] ; then
+   . ~/.git-completion.bash
+fi
+
+echo -e -n "\e[2 q"
