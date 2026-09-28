@@ -14,6 +14,8 @@ mkdir -p $CONFIG/tmux/plugins
 TPM_DIR=$CONFIG/tmux/plugins/tpm
 if [ ! -d "${TPM_DIR}" ] ; then
     git clone https://github.com/tmux-plugins/tpm ${TPM_DIR}
+else
+    echo "TPM already installed at ${TPM_DIR}..."
 fi
 
 # Link the config into home.
